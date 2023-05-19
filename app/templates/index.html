@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="text-3xl font-bold underline">Hello World!</h1>
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col">
+            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                  <table class="min-w-full text-left text-sm font-light text-white">
+                    <thead
+                      class="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
+                      <tr>
+                        <th scope="col" class="px-6 py-4">#</th>
+                        <th scope="col" class="px-6 py-4">First</th>
+                        <th scope="col" class="px-6 py-4">Last</th>
+                        <th scope="col" class="px-6 py-4">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for x in myapps %}
+                      <tr
+                        class="border-b bg-neutral-100 dark:border-neutral-500 dark:bg-neutral-700">
+                        <td class="whitespace-nowrap px-6 py-4 font-medium"><a href="details/{{ x.id }}">{{ x.id }}</a></td>
+                        <td class="whitespace-nowrap px-6 py-4">{{ x.firstname }}</td>
+                        <td class="whitespace-nowrap px-6 py-4"> {{ x.lastname }}</td>
+                        <td class="whitespace-nowrap px-6 py-4">{{ x.receiptNumber }}</td>
+                      </tr>
+                      {% endfor %}
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</body>
+</html>
